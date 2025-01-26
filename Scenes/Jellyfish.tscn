@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://btrq0jio6wrin"]
+
+[ext_resource type="Script" path="res://Scripts/Jellyfish.gd" id="1_m07os"]
+[ext_resource type="Texture2D" uid="uid://byyqyp3h0yk42" path="res://Sprites/AguaViva.png" id="2_ebxm7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m07os"]
+atlas = ExtResource("2_ebxm7")
+region = Rect2(0, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebxm7"]
+atlas = ExtResource("2_ebxm7")
+region = Rect2(32, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2clb"]
+atlas = ExtResource("2_ebxm7")
+region = Rect2(0, 41, 32, 41)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mv3f0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m07os")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebxm7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2clb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e2clb"]
+radius = 23.0217
+
+[node name="Jellyfish" type="Area2D"]
+script = ExtResource("1_m07os")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mv3f0")
+autoplay = "default"
+frame_progress = 0.681106
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_e2clb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
