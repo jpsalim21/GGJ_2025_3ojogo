@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://btrq0jio6wrin"]
+
+[ext_resource type="Script" uid="uid://djq7mxmvsp8ch" path="res://Scripts/Jellyfish.gd" id="1_m07os"]
+[ext_resource type="Texture2D" uid="uid://byyqyp3h0yk42" path="res://Sprites/AguaViva.png" id="2_ebxm7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6goe8"]
+atlas = ExtResource("2_ebxm7")
+region = Rect2(4, 2, 24, 40)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e2clb"]
+radius = 23.0217
+
+[node name="Jellyfish" type="Area2D"]
+script = ExtResource("1_m07os")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_6goe8")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_e2clb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

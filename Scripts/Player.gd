@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed : float = 200  # Velocidade horizontal (para direita/esquerda)
-@export var vertical_speed : float = 15  # Velocidade constante para baixo
+@export var vertical_speed : float = 30  # Velocidade constante para baixo
 @export var tilt_speed : float = 5.0  # Velocidade de rotação do sprite
 @export var max_tilt_angle : float = 45.0  # Ângulo máximo de inclinação (em graus)
 var direcao : float = 0.0
@@ -10,6 +10,7 @@ var direcao : float = 0.0
 
 func _physics_process(delta):
 	# Define o movimento constante para baixo
+	print(vertical_speed)
 	velocity.y = vertical_speed
 	direcao = Input.get_axis("Esquerda", "Direita")
 	velocity.x = direcao * speed

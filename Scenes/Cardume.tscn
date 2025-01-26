@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b188e82vwwe32"]
+
+[ext_resource type="Script" uid="uid://xng1y4ushf1p" path="res://Scripts/Cardume.gd" id="1_dueio"]
+[ext_resource type="Texture2D" uid="uid://bmhhm4lnhhc7v" path="res://Sprites/Cardume.png" id="2_uowm7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbdmi"]
+atlas = ExtResource("2_uowm7")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dueio"]
+radius = 20.025
+
+[node name="Cardume" type="Area2D"]
+script = ExtResource("1_dueio")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_kbdmi")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_dueio")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
