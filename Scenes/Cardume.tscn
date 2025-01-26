@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b188e82vwwe32"]
 
-[ext_resource type="Script" uid="uid://xng1y4ushf1p" path="res://Scripts/Cardume.gd" id="1_dueio"]
+[ext_resource type="Script" path="res://Scripts/Cardume.gd" id="1_dueio"]
 [ext_resource type="Texture2D" uid="uid://bmhhm4lnhhc7v" path="res://Sprites/Cardume.png" id="2_uowm7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kbdmi"]
