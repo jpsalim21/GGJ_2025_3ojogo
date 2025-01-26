@@ -200,4 +200,15 @@ velocidade = 3.0
 posicao_maxima_x = 200.0
 posicao_minima_x = 50.0
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.00685, 0, 0.339922, 1)
+
 [editable path="TileMapLayer2/Cardume"]
