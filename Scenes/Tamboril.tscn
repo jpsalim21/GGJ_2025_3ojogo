@@ -1,7 +1,36 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccsvly17av8u"]
+[gd_scene load_steps=9 format=3 uid="uid://ccsvly17av8u"]
 
-[ext_resource type="Script" uid="uid://d025k7yrt4b4" path="res://Scripts/Tamboril.gd" id="1_1bvo3"]
+[ext_resource type="Script" path="res://Scripts/Tamboril.gd" id="1_1bvo3"]
 [ext_resource type="Texture2D" uid="uid://dv526vv6efjeo" path="res://Sprites/Tamboril.png" id="2_iu1l1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bvo3"]
+atlas = ExtResource("2_iu1l1")
+region = Rect2(0, 0, 57, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iu1l1"]
+atlas = ExtResource("2_iu1l1")
+region = Rect2(0, 39, 57, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gbqq"]
+atlas = ExtResource("2_iu1l1")
+region = Rect2(0, 78, 57, 39)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3c2bw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bvo3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iu1l1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gbqq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jbu54"]
 atlas = ExtResource("2_iu1l1")
@@ -13,7 +42,13 @@ radius = 19.0263
 [node name="Tamboril" type="Area2D"]
 script = ExtResource("1_1bvo3")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3c2bw")
+autoplay = "default"
+frame_progress = 0.752985
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = SubResource("AtlasTexture_jbu54")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
