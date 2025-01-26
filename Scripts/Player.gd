@@ -10,7 +10,6 @@ var direcao : float = 0.0
 
 func _physics_process(delta):
 	# Define o movimento constante para baixo
-	print(vertical_speed)
 	velocity.y = vertical_speed
 	direcao = Input.get_axis("Esquerda", "Direita")
 	velocity.x = direcao * speed

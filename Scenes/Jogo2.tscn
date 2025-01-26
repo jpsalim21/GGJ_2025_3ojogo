@@ -121,7 +121,7 @@ posicao_minima_x = -230.0
 
 [node name="Jellyfish3" parent="TileMapLayer2" instance=ExtResource("8_6a2ol")]
 position = Vector2(33, 2009)
-velocidade = 10.0
+velocidade = 6.0
 posicao_maxima_x = 230.0
 posicao_minima_x = -230.0
 
@@ -145,13 +145,59 @@ posicao_minima_x = 0.0
 
 [node name="Tamboril3" parent="TileMapLayer2" instance=ExtResource("9_b4aea")]
 position = Vector2(-122, 3548)
-velocidade = 7.0
+velocidade = 3.0
 posicao_maxima_x = 230.0
 posicao_minima_x = -230.0
 
-[node name="Tamboril4" parent="TileMapLayer2" instance=ExtResource("9_b4aea")]
-position = Vector2(167, 3829)
-velocidade = 15.0
-posicao_maxima_x = 100.0
+[node name="Tamboril5" parent="TileMapLayer2" instance=ExtResource("9_b4aea")]
+position = Vector2(-36, 4179)
+velocidade = 3.0
+posicao_maxima_x = 230.0
+posicao_minima_x = -230.0
+
+[node name="Cardume10" parent="TileMapLayer2" instance=ExtResource("7_8rtu3")]
+position = Vector2(164, 542)
+bonus_speed = 25.0
+
+[node name="Cardume12" parent="TileMapLayer2" instance=ExtResource("7_8rtu3")]
+position = Vector2(-62, 1653)
+
+[node name="Cardume13" parent="TileMapLayer2" instance=ExtResource("7_8rtu3")]
+position = Vector2(-122, 2506)
+bonus_speed = 25.0
+
+[node name="Cardume14" parent="TileMapLayer2" instance=ExtResource("7_8rtu3")]
+position = Vector2(189, 2879)
+bonus_speed = 25.0
+
+[node name="Cardume15" parent="TileMapLayer2" instance=ExtResource("7_8rtu3")]
+position = Vector2(-17, 3181)
+bonus_speed = 25.0
+
+[node name="Cardume16" parent="TileMapLayer2" instance=ExtResource("7_8rtu3")]
+position = Vector2(-96, 3989)
+bonus_speed = 25.0
+
+[node name="Cardume17" parent="TileMapLayer2" instance=ExtResource("7_8rtu3")]
+position = Vector2(107, 3646)
+bonus_speed = 25.0
+
+[node name="Jellyfish5" parent="TileMapLayer2" instance=ExtResource("8_6a2ol")]
+position = Vector2(-156, 3715)
+velocidade = 4.0
+posicao_maxima_x = 230.0
+posicao_minima_x = -230.0
+
+[node name="Jellyfish6" parent="TileMapLayer2" instance=ExtResource("8_6a2ol")]
+position = Vector2(-107, 4113)
+velocidade = 6.0
+posicao_maxima_x = 50.0
+posicao_minima_x = -150.0
+
+[node name="Jellyfish7" parent="TileMapLayer2" instance=ExtResource("8_6a2ol")]
+position = Vector2(-124, 3207)
+velocidade = 3.0
+posicao_maxima_x = 200.0
+posicao_minima_x = 50.0
 
 [editable path="TileMapLayer2/Cardume"]

@@ -15,6 +15,7 @@ var seguir_x : bool = false  # Define se a raposa já deve seguir o peixe no eix
 
 func _physics_process(delta):
 	velocity.y = vertical_speed
+	print(abs(position.y - peixe.position.y))
 	var diff_x = position.x - peixe.position.x  # Diferença no eixo X
 	if diff_x > tolerance:
 		velocity.x = -follow_speed  # Move para a esquerda em direção ao peixe
@@ -26,9 +27,10 @@ func _physics_process(delta):
 		
 	if max_dist < abs(position.y - peixe.position.y):
 		vertical_speed = peixe.velocity.y + anger
-	elif 1 > abs(position.y - peixe.position.y):
-		position.y = peixe.position.y
-		vertical_speed = peixe.velocity.y
+	elif 25 > abs(position.y - peixe.position.y):
+		#position.y = peixe.position.y
+		#vertical_speed = peixe.velocity.y
+		SceneController.reloadCurrentScene()
 
 	# Move o personagem
 	move_and_slide()
