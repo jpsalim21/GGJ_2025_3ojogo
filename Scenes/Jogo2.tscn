@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=4 uid="uid://cuqf2cyy05h2b"]
+[gd_scene load_steps=20 format=4 uid="uid://cuqf2cyy05h2b"]
 
 [ext_resource type="Script" uid="uid://c3gvgv1s7jr23" path="res://Scripts/Player.gd" id="1_8rtu3"]
 [ext_resource type="Texture2D" uid="uid://0pumx0uaj6om" path="res://Sprites/BubbleFish.png" id="2_6a2ol"]
 [ext_resource type="Script" uid="uid://c2oaydkyjfnhp" path="res://Scripts/Fox.gd" id="3_b4aea"]
-[ext_resource type="Texture2D" uid="uid://kfn60jgtt1xp" path="res://Sprites/Roseofthewind.png" id="4_rd4lw"]
+[ext_resource type="Texture2D" uid="uid://bro1igt6qfyus" path="res://Sprites/BolhaSemFundo.png" id="4_b4aea"]
 [ext_resource type="TileSet" uid="uid://cmvtxxxx24q4r" path="res://Tileset.tres" id="5_ekdcf"]
+[ext_resource type="Texture2D" uid="uid://cclaelsp7wc3c" path="res://Sprites/Spritesheet.png" id="5_rd4lw"]
 [ext_resource type="PackedScene" uid="uid://b188e82vwwe32" path="res://Scenes/Cardume.tscn" id="7_8rtu3"]
 [ext_resource type="PackedScene" uid="uid://btrq0jio6wrin" path="res://Scenes/Jellyfish.tscn" id="8_6a2ol"]
 [ext_resource type="PackedScene" uid="uid://ccsvly17av8u" path="res://Scenes/Tamboril.tscn" id="9_b4aea"]
@@ -13,6 +14,42 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_vvfyk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h0m2b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekdcf"]
+atlas = ExtResource("5_rd4lw")
+region = Rect2(0, 64, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22amf"]
+atlas = ExtResource("5_rd4lw")
+region = Rect2(33, 64, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tok8j"]
+atlas = ExtResource("5_rd4lw")
+region = Rect2(66, 64, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0d5tl"]
+atlas = ExtResource("5_rd4lw")
+region = Rect2(99, 64, 33, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4q7b1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekdcf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22amf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tok8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0d5tl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ekdcf"]
 texture = ExtResource("9_rd4lw")
@@ -1045,7 +1082,6 @@ texture = ExtResource("9_rd4lw")
 sources/0 = SubResource("TileSetAtlasSource_ekdcf")
 
 [node name="Jogo3" type="Node2D"]
-position = Vector2(-10, 5)
 
 [node name="Player" type="CharacterBody2D" parent="."]
 script = ExtResource("1_8rtu3")
@@ -1067,12 +1103,17 @@ position = Vector2(0, -150)
 script = ExtResource("3_b4aea")
 vertical_speed = 80.0
 
-[node name="Sprite2D" type="Sprite2D" parent="Fox"]
-scale = Vector2(0.225, 0.19375)
-texture = ExtResource("4_rd4lw")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fox"]
 shape = SubResource("CircleShape2D_h0m2b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fox"]
+rotation = 3.14159
+sprite_frames = SubResource("SpriteFrames_4q7b1")
+autoplay = "default"
+frame_progress = 0.491968
+
+[node name="Sprite2D" type="Sprite2D" parent="Fox"]
+texture = ExtResource("4_b4aea")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 position = Vector2(0, 500)

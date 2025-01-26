@@ -30,7 +30,7 @@ func _physics_process(delta):
 	elif 25 > abs(position.y - peixe.position.y):
 		#position.y = peixe.position.y
 		#vertical_speed = peixe.velocity.y
-		SceneController.reloadCurrentScene()
+		SceneController.changeSceneTo("res://Menus/MenuInicial.gd")
 
 	# Move o personagem
 	move_and_slide()
